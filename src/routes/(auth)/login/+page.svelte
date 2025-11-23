@@ -1,14 +1,7 @@
-<script>
-  let username = '';
-  let password = '';
-</script>
-
 <form method="POST">
-  <input name="username" bind:value={username} placeholder="아이디" />
-  <input name="password" type="password" bind:value={password} placeholder="비밀번호" />
+  <label for="email">email address</label>
+  <input id="email" name="email" type="email" placeholder="email" />
+  <label for="password">password</label>
+  <input id="password" name="password" type="password" placeholder="password" />
   <button type="submit">로그인</button>
 </form>
-
-{#if $page.form?.error}
-  <p style="color:red;">{$page.form.error}</p>
-{/if}
