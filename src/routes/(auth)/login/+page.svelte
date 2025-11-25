@@ -1,7 +1,17 @@
+<script lang="ts">
+	import type { PageProps } from './$types';
+
+	let { form }: PageProps = $props();
+</script>
 <form method="POST">
-  <label for="email">email address</label>
-  <input id="email" name="email" type="email" placeholder="email" />
-  <label for="password">password</label>
-  <input id="password" name="password" type="password" placeholder="password" />
-  <button type="submit">로그인</button>
+	{#if form?.error}<p class="error">{form.error}</p>{/if}
+	<label>
+		Email
+		<input name="email" type="email" value={form?.email ?? ''}>
+	</label>
+	<label>
+		Password
+		<input name="password" type="password">
+	</label>
+	<button>Log in</button>
 </form>
